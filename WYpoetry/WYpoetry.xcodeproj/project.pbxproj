@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13D6E6611CBB9C13003669E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6601CBB9C13003669E7 /* main.m */; };
+		13D6E6641CBB9C13003669E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6631CBB9C13003669E7 /* AppDelegate.m */; };
+		13D6E6671CBB9C13003669E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6661CBB9C13003669E7 /* ViewController.m */; };
+		13D6E66A1CBB9C13003669E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6E6681CBB9C13003669E7 /* Main.storyboard */; };
+		13D6E66C1CBB9C13003669E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6E66B1CBB9C13003669E7 /* Assets.xcassets */; };
+		13D6E66F1CBB9C13003669E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */; };
+		13D6E67A1CBB9C14003669E7 /* WYpoetryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6791CBB9C14003669E7 /* WYpoetryTests.m */; };
+		13D6E6851CBB9C14003669E7 /* WYpoetryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6841CBB9C14003669E7 /* WYpoetryUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13D6E6761CBB9C14003669E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13D6E6541CBB9C13003669E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13D6E65B1CBB9C13003669E7;
+			remoteInfo = WYpoetry;
+		};
+		13D6E6811CBB9C14003669E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13D6E6541CBB9C13003669E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13D6E65B1CBB9C13003669E7;
+			remoteInfo = WYpoetry;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		13D6E65C1CBB9C13003669E7 /* WYpoetry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYpoetry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D6E6601CBB9C13003669E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13D6E6621CBB9C13003669E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		13D6E6631CBB9C13003669E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		13D6E6651CBB9C13003669E7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		13D6E6661CBB9C13003669E7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		13D6E6691CBB9C13003669E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		13D6E66B1CBB9C13003669E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		13D6E66E1CBB9C13003669E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		13D6E6701CBB9C13003669E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13D6E6751CBB9C14003669E7 /* WYpoetryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYpoetryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D6E6791CBB9C14003669E7 /* WYpoetryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYpoetryTests.m; sourceTree = "<group>"; };
+		13D6E67B1CBB9C14003669E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13D6E6801CBB9C14003669E7 /* WYpoetryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYpoetryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D6E6841CBB9C14003669E7 /* WYpoetryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYpoetryUITests.m; sourceTree = "<group>"; };
+		13D6E6861CBB9C14003669E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13D6E6591CBB9C13003669E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13D6E6721CBB9C14003669E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13D6E67D1CBB9C14003669E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13D6E6531CBB9C13003669E7 = {
+			isa = PBXGroup;
+			children = (
+				13D6E65E1CBB9C13003669E7 /* WYpoetry */,
+				13D6E6781CBB9C14003669E7 /* WYpoetryTests */,
+				13D6E6831CBB9C14003669E7 /* WYpoetryUITests */,
+				13D6E65D1CBB9C13003669E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		13D6E65D1CBB9C13003669E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13D6E65C1CBB9C13003669E7 /* WYpoetry.app */,
+				13D6E6751CBB9C14003669E7 /* WYpoetryTests.xctest */,
+				13D6E6801CBB9C14003669E7 /* WYpoetryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13D6E65E1CBB9C13003669E7 /* WYpoetry */ = {
+			isa = PBXGroup;
+			children = (
+				13D6E6621CBB9C13003669E7 /* AppDelegate.h */,
+				13D6E6631CBB9C13003669E7 /* AppDelegate.m */,
+				13D6E6651CBB9C13003669E7 /* ViewController.h */,
+				13D6E6661CBB9C13003669E7 /* ViewController.m */,
+				13D6E6681CBB9C13003669E7 /* Main.storyboard */,
+				13D6E66B1CBB9C13003669E7 /* Assets.xcassets */,
+				13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */,
+				13D6E6701CBB9C13003669E7 /* Info.plist */,
+				13D6E65F1CBB9C13003669E7 /* Supporting Files */,
+			);
+			path = WYpoetry;
+			sourceTree = "<group>";
+		};
+		13D6E65F1CBB9C13003669E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13D6E6601CBB9C13003669E7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13D6E6781CBB9C14003669E7 /* WYpoetryTests */ = {
+			isa = PBXGroup;
+			children = (
+				13D6E6791CBB9C14003669E7 /* WYpoetryTests.m */,
+				13D6E67B1CBB9C14003669E7 /* Info.plist */,
+			);
+			path = WYpoetryTests;
+			sourceTree = "<group>";
+		};
+		13D6E6831CBB9C14003669E7 /* WYpoetryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				13D6E6841CBB9C14003669E7 /* WYpoetryUITests.m */,
+				13D6E6861CBB9C14003669E7 /* Info.plist */,
+			);
+			path = WYpoetryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13D6E65B1CBB9C13003669E7 /* WYpoetry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13D6E6891CBB9C14003669E7 /* Build configuration list for PBXNativeTarget "WYpoetry" */;
+			buildPhases = (
+				13D6E6581CBB9C13003669E7 /* Sources */,
+				13D6E6591CBB9C13003669E7 /* Frameworks */,
+				13D6E65A1CBB9C13003669E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WYpoetry;
+			productName = WYpoetry;
+			productReference = 13D6E65C1CBB9C13003669E7 /* WYpoetry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		13D6E6741CBB9C14003669E7 /* WYpoetryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13D6E68C1CBB9C14003669E7 /* Build configuration list for PBXNativeTarget "WYpoetryTests" */;
+			buildPhases = (
+				13D6E6711CBB9C14003669E7 /* Sources */,
+				13D6E6721CBB9C14003669E7 /* Frameworks */,
+				13D6E6731CBB9C14003669E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13D6E6771CBB9C14003669E7 /* PBXTargetDependency */,
+			);
+			name = WYpoetryTests;
+			productName = WYpoetryTests;
+			productReference = 13D6E6751CBB9C14003669E7 /* WYpoetryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13D6E67F1CBB9C14003669E7 /* WYpoetryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13D6E68F1CBB9C14003669E7 /* Build configuration list for PBXNativeTarget "WYpoetryUITests" */;
+			buildPhases = (
+				13D6E67C1CBB9C14003669E7 /* Sources */,
+				13D6E67D1CBB9C14003669E7 /* Frameworks */,
+				13D6E67E1CBB9C14003669E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13D6E6821CBB9C14003669E7 /* PBXTargetDependency */,
+			);
+			name = WYpoetryUITests;
+			productName = WYpoetryUITests;
+			productReference = 13D6E6801CBB9C14003669E7 /* WYpoetryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13D6E6541CBB9C13003669E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = wyman;
+				TargetAttributes = {
+					13D6E65B1CBB9C13003669E7 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					13D6E6741CBB9C14003669E7 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 13D6E65B1CBB9C13003669E7;
+					};
+					13D6E67F1CBB9C14003669E7 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 13D6E65B1CBB9C13003669E7;
+					};
+				};
+			};
+			buildConfigurationList = 13D6E6571CBB9C13003669E7 /* Build configuration list for PBXProject "WYpoetry" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 13D6E6531CBB9C13003669E7;
+			productRefGroup = 13D6E65D1CBB9C13003669E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13D6E65B1CBB9C13003669E7 /* WYpoetry */,
+				13D6E6741CBB9C14003669E7 /* WYpoetryTests */,
+				13D6E67F1CBB9C14003669E7 /* WYpoetryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13D6E65A1CBB9C13003669E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13D6E66F1CBB9C13003669E7 /* LaunchScreen.storyboard in Resources */,
+				13D6E66C1CBB9C13003669E7 /* Assets.xcassets in Resources */,
+				13D6E66A1CBB9C13003669E7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13D6E6731CBB9C14003669E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13D6E67E1CBB9C14003669E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13D6E6581CBB9C13003669E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13D6E6671CBB9C13003669E7 /* ViewController.m in Sources */,
+				13D6E6641CBB9C13003669E7 /* AppDelegate.m in Sources */,
+				13D6E6611CBB9C13003669E7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13D6E6711CBB9C14003669E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13D6E67A1CBB9C14003669E7 /* WYpoetryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13D6E67C1CBB9C14003669E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13D6E6851CBB9C14003669E7 /* WYpoetryUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13D6E6771CBB9C14003669E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13D6E65B1CBB9C13003669E7 /* WYpoetry */;
+			targetProxy = 13D6E6761CBB9C14003669E7 /* PBXContainerItemProxy */;
+		};
+		13D6E6821CBB9C14003669E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13D6E65B1CBB9C13003669E7 /* WYpoetry */;
+			targetProxy = 13D6E6811CBB9C14003669E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		13D6E6681CBB9C13003669E7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13D6E6691CBB9C13003669E7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13D6E66E1CBB9C13003669E7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13D6E6871CBB9C14003669E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		13D6E6881CBB9C14003669E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13D6E68A1CBB9C14003669E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYpoetry/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYpoetry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		13D6E68B1CBB9C14003669E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYpoetry/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYpoetry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		13D6E68D1CBB9C14003669E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WYpoetryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.poetry.WYpoetryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYpoetry.app/WYpoetry";
+			};
+			name = Debug;
+		};
+		13D6E68E1CBB9C14003669E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WYpoetryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.poetry.WYpoetryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYpoetry.app/WYpoetry";
+			};
+			name = Release;
+		};
+		13D6E6901CBB9C14003669E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WYpoetryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.poetry.WYpoetryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYpoetry;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		13D6E6911CBB9C14003669E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WYpoetryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.poetry.WYpoetryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WYpoetry;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13D6E6571CBB9C13003669E7 /* Build configuration list for PBXProject "WYpoetry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13D6E6871CBB9C14003669E7 /* Debug */,
+				13D6E6881CBB9C14003669E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13D6E6891CBB9C14003669E7 /* Build configuration list for PBXNativeTarget "WYpoetry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13D6E68A1CBB9C14003669E7 /* Debug */,
+				13D6E68B1CBB9C14003669E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		13D6E68C1CBB9C14003669E7 /* Build configuration list for PBXNativeTarget "WYpoetryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13D6E68D1CBB9C14003669E7 /* Debug */,
+				13D6E68E1CBB9C14003669E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		13D6E68F1CBB9C14003669E7 /* Build configuration list for PBXNativeTarget "WYpoetryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13D6E6901CBB9C14003669E7 /* Debug */,
+				13D6E6911CBB9C14003669E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13D6E6541CBB9C13003669E7 /* Project object */;
+}
