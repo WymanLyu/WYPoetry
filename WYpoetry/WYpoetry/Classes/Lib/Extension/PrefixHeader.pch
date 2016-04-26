@@ -1,0 +1,44 @@
+//
+//  PrefixHeader.pch
+//  彩票项目
+//
+//  Created by sialice on 16/3/5.
+//  Copyright © 2016年 sialice. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+
+#define BASECOLOR [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1]
+
+// ******************** 尺寸宏 ****************************
+#define IPHONE6_PLUS_SCREENSIZE CGSizeMake(414, 736)
+#define IPHONE6_SCREENSIZE CGSizeMake(375, 667)
+#define IPHONE5_SCREENSIZE CGSizeMake(320, 568)
+#define IPHONE4_SCREENSIZE CGSizeMake(320, 480)
+
+
+// ******************** 打印 ****************************
+#ifdef DEBUG
+#define WYLog(FORMAT,...) fprintf(stderr, "%s\n",[[NSString stringWithFormat:FORMAT,##__VA_ARGS__]UTF8String]);
+#else
+#define WYLog(...)
+#endif
+
+#ifdef DEBUG
+#define WYprintf(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define WYprintf(FORMAT, ...) nil
+#endif
+// ******************** 头文件 **************************
+#import "WYExtension.h"
+
+
+#endif
+
+
+#endif /* PrefixHeader_pch */

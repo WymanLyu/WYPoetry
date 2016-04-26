@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "WYHomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 1.创建window
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = window;
+    
+    // 2.设置根控制器
+    WYHomeViewController *homeVc = [[WYHomeViewController alloc] init];
+    window.rootViewController = homeVc;
+    
+    // 3.显示window
+    [window makeKeyAndVisible];
+    
     return YES;
 }
 

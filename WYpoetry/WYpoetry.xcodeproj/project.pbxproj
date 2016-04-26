@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13D6E6611CBB9C13003669E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6601CBB9C13003669E7 /* main.m */; };
-		13D6E6641CBB9C13003669E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6631CBB9C13003669E7 /* AppDelegate.m */; };
-		13D6E6671CBB9C13003669E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6661CBB9C13003669E7 /* ViewController.m */; };
-		13D6E66A1CBB9C13003669E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6E6681CBB9C13003669E7 /* Main.storyboard */; };
-		13D6E66C1CBB9C13003669E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6E66B1CBB9C13003669E7 /* Assets.xcassets */; };
+		137DE0311CCF37E400E71160 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE02F1CCF37E400E71160 /* AppDelegate.m */; };
+		137DE0341CCF38CF00E71160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE0331CCF38CF00E71160 /* main.m */; };
+		137DE0381CCF3CB000E71160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 137DE0371CCF3CB000E71160 /* Assets.xcassets */; };
+		137DE03A1CCF3F1700E71160 /* AppLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 137DE0391CCF3F1700E71160 /* AppLaunchImage.png */; };
+		137DE03D1CCF46A400E71160 /* WYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE03C1CCF46A400E71160 /* WYHomeViewController.m */; };
+		137DE0521CCF479400E71160 /* NSArray+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE0411CCF479300E71160 /* NSArray+WY.m */; };
+		137DE0531CCF479400E71160 /* NSString+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE0431CCF479300E71160 /* NSString+WY.m */; };
+		137DE0541CCF479400E71160 /* UIBarButtonItem+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE0461CCF479300E71160 /* UIBarButtonItem+WY.m */; };
+		137DE0551CCF479400E71160 /* UIColor+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE0481CCF479300E71160 /* UIColor+WY.m */; };
+		137DE0561CCF479400E71160 /* UIImage+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE04A1CCF479300E71160 /* UIImage+WY.m */; };
+		137DE0571CCF479400E71160 /* UIImageView+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE04C1CCF479300E71160 /* UIImageView+WY.m */; };
+		137DE0581CCF479400E71160 /* UITabBarItem+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE04E1CCF479300E71160 /* UITabBarItem+WY.m */; };
+		137DE0591CCF479400E71160 /* UIView+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE0501CCF479400E71160 /* UIView+WY.m */; };
+		137DE05C1CCF4B8100E71160 /* WYButtomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE05B1CCF4B8100E71160 /* WYButtomBar.m */; };
 		13D6E66F1CBB9C13003669E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */; };
 		13D6E67A1CBB9C14003669E7 /* WYpoetryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6791CBB9C14003669E7 /* WYpoetryTests.m */; };
 		13D6E6851CBB9C14003669E7 /* WYpoetryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6841CBB9C14003669E7 /* WYpoetryUITests.m */; };
@@ -35,14 +44,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		137DE02E1CCF37E400E71160 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		137DE02F1CCF37E400E71160 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
+		137DE0331CCF38CF00E71160 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		137DE0371CCF3CB000E71160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		137DE0391CCF3F1700E71160 /* AppLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLaunchImage.png; sourceTree = "<group>"; };
+		137DE03B1CCF46A400E71160 /* WYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHomeViewController.h; sourceTree = "<group>"; };
+		137DE03C1CCF46A400E71160 /* WYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHomeViewController.m; sourceTree = "<group>"; };
+		137DE0401CCF479300E71160 /* NSArray+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+WY.h"; sourceTree = "<group>"; };
+		137DE0411CCF479300E71160 /* NSArray+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WY.m"; sourceTree = "<group>"; };
+		137DE0421CCF479300E71160 /* NSString+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WY.h"; sourceTree = "<group>"; };
+		137DE0431CCF479300E71160 /* NSString+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WY.m"; sourceTree = "<group>"; };
+		137DE0441CCF479300E71160 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Classes/Lib/Extension/PrefixHeader.pch; sourceTree = "<group>"; };
+		137DE0451CCF479300E71160 /* UIBarButtonItem+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WY.h"; sourceTree = "<group>"; };
+		137DE0461CCF479300E71160 /* UIBarButtonItem+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WY.m"; sourceTree = "<group>"; };
+		137DE0471CCF479300E71160 /* UIColor+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+WY.h"; sourceTree = "<group>"; };
+		137DE0481CCF479300E71160 /* UIColor+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WY.m"; sourceTree = "<group>"; };
+		137DE0491CCF479300E71160 /* UIImage+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WY.h"; sourceTree = "<group>"; };
+		137DE04A1CCF479300E71160 /* UIImage+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WY.m"; sourceTree = "<group>"; };
+		137DE04B1CCF479300E71160 /* UIImageView+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WY.h"; sourceTree = "<group>"; };
+		137DE04C1CCF479300E71160 /* UIImageView+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WY.m"; sourceTree = "<group>"; };
+		137DE04D1CCF479300E71160 /* UITabBarItem+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+WY.h"; sourceTree = "<group>"; };
+		137DE04E1CCF479300E71160 /* UITabBarItem+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+WY.m"; sourceTree = "<group>"; };
+		137DE04F1CCF479400E71160 /* UIView+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WY.h"; sourceTree = "<group>"; };
+		137DE0501CCF479400E71160 /* UIView+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WY.m"; sourceTree = "<group>"; };
+		137DE0511CCF479400E71160 /* WYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYExtension.h; sourceTree = "<group>"; };
+		137DE05A1CCF4B8100E71160 /* WYButtomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYButtomBar.h; sourceTree = "<group>"; };
+		137DE05B1CCF4B8100E71160 /* WYButtomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYButtomBar.m; sourceTree = "<group>"; };
 		13D6E65C1CBB9C13003669E7 /* WYpoetry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYpoetry.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13D6E6601CBB9C13003669E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		13D6E6621CBB9C13003669E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		13D6E6631CBB9C13003669E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		13D6E6651CBB9C13003669E7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		13D6E6661CBB9C13003669E7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		13D6E6691CBB9C13003669E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		13D6E66B1CBB9C13003669E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13D6E66E1CBB9C13003669E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D6E6701CBB9C13003669E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13D6E6751CBB9C14003669E7 /* WYpoetryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYpoetryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +107,190 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		137DE0171CCF355C00E71160 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				137DE01C1CCF355C00E71160 /* Home */,
+				137DE0181CCF355C00E71160 /* Edit */,
+				137DE0201CCF355C00E71160 /* Mine */,
+				137DE0281CCF355C00E71160 /* Setting */,
+				137DE0241CCF355C00E71160 /* Other */,
+				137DE03E1CCF479300E71160 /* Lib */,
+				137DE0371CCF3CB000E71160 /* Assets.xcassets */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		137DE0181CCF355C00E71160 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				137DE0191CCF355C00E71160 /* Controller */,
+				137DE01A1CCF355C00E71160 /* Model */,
+				137DE01B1CCF355C00E71160 /* View */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		137DE0191CCF355C00E71160 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		137DE01A1CCF355C00E71160 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		137DE01B1CCF355C00E71160 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		137DE01C1CCF355C00E71160 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				137DE01D1CCF355C00E71160 /* Controller */,
+				137DE01E1CCF355C00E71160 /* Model */,
+				137DE01F1CCF355C00E71160 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		137DE01D1CCF355C00E71160 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				137DE03B1CCF46A400E71160 /* WYHomeViewController.h */,
+				137DE03C1CCF46A400E71160 /* WYHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		137DE01E1CCF355C00E71160 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		137DE01F1CCF355C00E71160 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				137DE05A1CCF4B8100E71160 /* WYButtomBar.h */,
+				137DE05B1CCF4B8100E71160 /* WYButtomBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		137DE0201CCF355C00E71160 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				137DE0211CCF355C00E71160 /* Controller */,
+				137DE0221CCF355C00E71160 /* Model */,
+				137DE0231CCF355C00E71160 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		137DE0211CCF355C00E71160 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		137DE0221CCF355C00E71160 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		137DE0231CCF355C00E71160 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		137DE0241CCF355C00E71160 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				137DE0331CCF38CF00E71160 /* main.m */,
+				137DE02E1CCF37E400E71160 /* AppDelegate.h */,
+				137DE02F1CCF37E400E71160 /* AppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		137DE0281CCF355C00E71160 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				137DE0291CCF355C00E71160 /* Controller */,
+				137DE02A1CCF355C00E71160 /* Model */,
+				137DE02B1CCF355C00E71160 /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		137DE0291CCF355C00E71160 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		137DE02A1CCF355C00E71160 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		137DE02B1CCF355C00E71160 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		137DE03E1CCF479300E71160 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				137DE03F1CCF479300E71160 /* Extension */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		137DE03F1CCF479300E71160 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				137DE0401CCF479300E71160 /* NSArray+WY.h */,
+				137DE0411CCF479300E71160 /* NSArray+WY.m */,
+				137DE0421CCF479300E71160 /* NSString+WY.h */,
+				137DE0431CCF479300E71160 /* NSString+WY.m */,
+				137DE0451CCF479300E71160 /* UIBarButtonItem+WY.h */,
+				137DE0461CCF479300E71160 /* UIBarButtonItem+WY.m */,
+				137DE0471CCF479300E71160 /* UIColor+WY.h */,
+				137DE0481CCF479300E71160 /* UIColor+WY.m */,
+				137DE0491CCF479300E71160 /* UIImage+WY.h */,
+				137DE04A1CCF479300E71160 /* UIImage+WY.m */,
+				137DE04B1CCF479300E71160 /* UIImageView+WY.h */,
+				137DE04C1CCF479300E71160 /* UIImageView+WY.m */,
+				137DE04D1CCF479300E71160 /* UITabBarItem+WY.h */,
+				137DE04E1CCF479300E71160 /* UITabBarItem+WY.m */,
+				137DE04F1CCF479400E71160 /* UIView+WY.h */,
+				137DE0501CCF479400E71160 /* UIView+WY.m */,
+				137DE0511CCF479400E71160 /* WYExtension.h */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		13D6E6531CBB9C13003669E7 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +314,7 @@
 		13D6E65E1CBB9C13003669E7 /* WYpoetry */ = {
 			isa = PBXGroup;
 			children = (
-				13D6E6621CBB9C13003669E7 /* AppDelegate.h */,
-				13D6E6631CBB9C13003669E7 /* AppDelegate.m */,
-				13D6E6651CBB9C13003669E7 /* ViewController.h */,
-				13D6E6661CBB9C13003669E7 /* ViewController.m */,
-				13D6E6681CBB9C13003669E7 /* Main.storyboard */,
-				13D6E66B1CBB9C13003669E7 /* Assets.xcassets */,
-				13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */,
-				13D6E6701CBB9C13003669E7 /* Info.plist */,
+				137DE0171CCF355C00E71160 /* Classes */,
 				13D6E65F1CBB9C13003669E7 /* Supporting Files */,
 			);
 			path = WYpoetry;
@@ -117,7 +323,10 @@
 		13D6E65F1CBB9C13003669E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				13D6E6601CBB9C13003669E7 /* main.m */,
+				13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */,
+				137DE0391CCF3F1700E71160 /* AppLaunchImage.png */,
+				13D6E6701CBB9C13003669E7 /* Info.plist */,
+				137DE0441CCF479300E71160 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -243,9 +452,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137DE03A1CCF3F1700E71160 /* AppLaunchImage.png in Resources */,
 				13D6E66F1CBB9C13003669E7 /* LaunchScreen.storyboard in Resources */,
-				13D6E66C1CBB9C13003669E7 /* Assets.xcassets in Resources */,
-				13D6E66A1CBB9C13003669E7 /* Main.storyboard in Resources */,
+				137DE0381CCF3CB000E71160 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +479,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13D6E6671CBB9C13003669E7 /* ViewController.m in Sources */,
-				13D6E6641CBB9C13003669E7 /* AppDelegate.m in Sources */,
-				13D6E6611CBB9C13003669E7 /* main.m in Sources */,
+				137DE03D1CCF46A400E71160 /* WYHomeViewController.m in Sources */,
+				137DE0591CCF479400E71160 /* UIView+WY.m in Sources */,
+				137DE0531CCF479400E71160 /* NSString+WY.m in Sources */,
+				137DE0311CCF37E400E71160 /* AppDelegate.m in Sources */,
+				137DE05C1CCF4B8100E71160 /* WYButtomBar.m in Sources */,
+				137DE0561CCF479400E71160 /* UIImage+WY.m in Sources */,
+				137DE0551CCF479400E71160 /* UIColor+WY.m in Sources */,
+				137DE0571CCF479400E71160 /* UIImageView+WY.m in Sources */,
+				137DE0581CCF479400E71160 /* UITabBarItem+WY.m in Sources */,
+				137DE0521CCF479400E71160 /* NSArray+WY.m in Sources */,
+				137DE0541CCF479400E71160 /* UIBarButtonItem+WY.m in Sources */,
+				137DE0341CCF38CF00E71160 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +526,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13D6E6681CBB9C13003669E7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13D6E6691CBB9C13003669E7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -411,6 +621,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WYpoetry/Classes/Lib/Extension/PrefixHeader.pch;
 				INFOPLIST_FILE = WYpoetry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYpoetry;
@@ -422,6 +634,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WYpoetry/Classes/Lib/Extension/PrefixHeader.pch;
 				INFOPLIST_FILE = WYpoetry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYpoetry;
@@ -496,6 +710,7 @@
 				13D6E68B1CBB9C14003669E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13D6E68C1CBB9C14003669E7 /* Build configuration list for PBXNativeTarget "WYpoetryTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +719,7 @@
 				13D6E68E1CBB9C14003669E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13D6E68F1CBB9C14003669E7 /* Build configuration list for PBXNativeTarget "WYpoetryUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +728,7 @@
 				13D6E6911CBB9C14003669E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
