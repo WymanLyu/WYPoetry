@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WYBaseViewController.h"
 
-@interface WYHomeViewController : UIViewController
+@interface WYHomeViewController : WYBaseViewController
 
 @end
