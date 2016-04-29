@@ -13,13 +13,20 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #ifdef __OBJC__
 
+//
 #define BASECOLOR [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1]
+
+//
+#define URL(index) [NSURL URLWithString:[@"http://bubo.in/poe/poem?" stringByAppendingString:[NSString stringWithFormat:@"s=%zd", index]]] 
+//http://mobile.reyinapp.com/api/v1/concert_list?page_index=1
 
 // ******************** 尺寸宏 ****************************
 #define IPHONE6_PLUS_SCREENSIZE CGSizeMake(414, 736)
 #define IPHONE6_SCREENSIZE CGSizeMake(375, 667)
 #define IPHONE5_SCREENSIZE CGSizeMake(320, 568)
 #define IPHONE4_SCREENSIZE CGSizeMake(320, 480)
+#define CURRENTSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define CURRENTSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 
 // ******************** 打印 ****************************

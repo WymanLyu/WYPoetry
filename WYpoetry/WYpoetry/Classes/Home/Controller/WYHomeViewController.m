@@ -11,10 +11,18 @@
 #import "WYBaseNavViewController.h"
 #import "WYSettingTableViewController.h"
 #import "WYMineTableViewController.h"
+#import "WYPoetryModel.h"
+#import "WYPoetrySentenceCell.h"
 
 @interface WYHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
+/** 底部的bar */
 @property (nonatomic, weak) WYButtomBar *buttomBar;
 
+/** 播放tableView */
+@property (nonatomic, weak) UITableView *showView;
+
+/** 当前诗歌模型 */
+@property (nonatomic, strong) WYPoetryModel *model;
 @end
 
 @implementation WYHomeViewController
@@ -27,6 +35,9 @@
     
     // 2.设置展示view
     [self setupTableView];
+    
+    // 3.网络数据
+    [self loadData];
 
 }
 
@@ -63,19 +74,87 @@
     CGFloat barY = [UIScreen mainScreen].bounds.size.height - barH;
     toolbar.frame = CGRectMake(barX, barY, barW, barH);
 
-
     [toolbar setBackgroundColor:BASECOLOR];
     [self.view addSubview:toolbar];
 }
 
+/** 设置展示的view */
 - (void)setupTableView {
     UITableView *showTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:showTableView attribute:NSLayoutAttributeCenterX relatedBy:<#(NSLayoutRelation)#> toItem:<#(nullable id)#> attribute:<#(NSLayoutAttribute)#> multiplier:<#(CGFloat)#> constant:<#(CGFloat)#>]
-//    [self.view addConstraints:<#(nonnull NSArray<__kindof NSLayoutConstraint *> *)#>]
-    showTableView.backgroundColor = [UIColor wy_randomColor];
+    [showTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [showTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    showTableView.showsVerticalScrollIndicator = NO;
+    self.showView = showTableView;
+    self.showView.backgroundColor = BASECOLOR;
+    [self.view addSubview:showTableView];
+    NSLayoutConstraint *constraintCenterX = [NSLayoutConstraint constraintWithItem:showTableView
+                                                                         attribute:NSLayoutAttributeCenterX
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self.view
+                                                                         attribute:NSLayoutAttributeCenterX
+                                                                        multiplier:1.0f
+                                                                          constant:0];
+    NSLayoutConstraint *constraintCenterY = [NSLayoutConstraint constraintWithItem:showTableView
+                                                                  attribute:NSLayoutAttributeCenterY
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.view
+                                                                  attribute:NSLayoutAttributeCenterY
+                                                                 multiplier:1.0f
+                                                                   constant:-20];
+    NSLayoutConstraint *contraintWidth = [NSLayoutConstraint constraintWithItem:showTableView
+                                                                      attribute:NSLayoutAttributeWidth
+                                                                      relatedBy:NSLayoutRelationEqual
+                                                                         toItem:self.view
+                                                                      attribute:NSLayoutAttributeWidth
+                                                                     multiplier:0.75
+                                                                       constant:0];
+    NSLayoutConstraint *contraintHeight = [NSLayoutConstraint constraintWithItem:showTableView
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.view
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                multiplier:0.5
+                                                                  constant:0];
+    
+    [self.view addConstraints:@[constraintCenterX, constraintCenterY, contraintHeight, contraintWidth]];
+    showTableView.backgroundColor = BASECOLOR;
     showTableView.dataSource = self;
     showTableView.delegate = self;
-    [self.view addSubview:showTableView];
+    
+}
+
+/** 网络请求 */
+- (void)loadData {
+    // 1.会话配置
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    // 2.创建会话
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    // 3.创建请求
+    NSInteger index = 34;
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL(index)];
+    
+    // 3.发起数据请求任务
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        if (connectionError) { // 连接网络失败
+            NSLog(@"网络连接失败:%@", connectionError);
+        }
+        // 解析JSON数据
+        NSError *error = nil;
+        NSArray *contentArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        if (error) {// 数据解析失败
+            WYLog(@"数据解析失败:%@", error);
+        }else { // 数据转模型
+            WYLog(@"====");
+            WYPoetryModel *model = [WYPoetryModel poetryModelWithDict:[contentArray firstObject]];
+            self.model = model;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.showView reloadData];
+            });
+        }
+    }];
+    
 }
 
 /** 设置点击 */
@@ -106,15 +185,23 @@
 
 }
 
+#pragma mark - UITableViewDatatSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.model.contents.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    cell.textLabel.text = [NSString stringWithFormat:@"测试%zd", indexPath.row];
+    // 1.创建cell
+    WYPoetrySentenceCell *cell = [WYPoetrySentenceCell poetrySentenceCellWithTableView:tableView];
+    
+    // 2.设置cell
+    cell.sentence = self.model.contents[indexPath.row];
+    
+    // 3.返回cell
     return cell;
 }
+
+
 @end
 
 

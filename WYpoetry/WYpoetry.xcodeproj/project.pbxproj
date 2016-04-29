@@ -28,6 +28,8 @@
 		13DE36011CD0FD35000103E5 /* WYSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DE36001CD0FD35000103E5 /* WYSettingTableViewController.m */; };
 		13DE36041CD0FEA8000103E5 /* WYBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DE36031CD0FEA8000103E5 /* WYBaseNavViewController.m */; };
 		13DE36071CD10AEA000103E5 /* WYMineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DE36061CD10AEA000103E5 /* WYMineTableViewController.m */; };
+		13E5F80E1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E5F80D1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.m */; };
+		13E5F8111CD3B39400BDB4F9 /* WYPoetryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E5F8101CD3B39400BDB4F9 /* WYPoetryModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		13DE36031CD0FEA8000103E5 /* WYBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYBaseNavViewController.m; sourceTree = "<group>"; };
 		13DE36051CD10AEA000103E5 /* WYMineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYMineTableViewController.h; sourceTree = "<group>"; };
 		13DE36061CD10AEA000103E5 /* WYMineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYMineTableViewController.m; sourceTree = "<group>"; };
+		13E5F80C1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPoetrySentenceCell.h; sourceTree = "<group>"; };
+		13E5F80D1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPoetrySentenceCell.m; sourceTree = "<group>"; };
+		13E5F80F1CD3B39400BDB4F9 /* WYPoetryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPoetryModel.h; sourceTree = "<group>"; };
+		13E5F8101CD3B39400BDB4F9 /* WYPoetryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPoetryModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,8 @@
 		137DE01E1CCF355C00E71160 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				13E5F80F1CD3B39400BDB4F9 /* WYPoetryModel.h */,
+				13E5F8101CD3B39400BDB4F9 /* WYPoetryModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +241,8 @@
 			children = (
 				137DE05A1CCF4B8100E71160 /* WYButtomBar.h */,
 				137DE05B1CCF4B8100E71160 /* WYButtomBar.m */,
+				13E5F80C1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.h */,
+				13E5F80D1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E5F80E1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.m in Sources */,
 				137DE03D1CCF46A400E71160 /* WYHomeViewController.m in Sources */,
 				137DE0591CCF479400E71160 /* UIView+WY.m in Sources */,
 				137DE0531CCF479400E71160 /* NSString+WY.m in Sources */,
@@ -546,6 +557,7 @@
 				13DE36071CD10AEA000103E5 /* WYMineTableViewController.m in Sources */,
 				137DE0551CCF479400E71160 /* UIColor+WY.m in Sources */,
 				13DE36011CD0FD35000103E5 /* WYSettingTableViewController.m in Sources */,
+				13E5F8111CD3B39400BDB4F9 /* WYPoetryModel.m in Sources */,
 				137DE0571CCF479400E71160 /* UIImageView+WY.m in Sources */,
 				137DE0581CCF479400E71160 /* UITabBarItem+WY.m in Sources */,
 				137DE0521CCF479400E71160 /* NSArray+WY.m in Sources */,
@@ -686,6 +698,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WYpoetry/Classes/Lib/Extension/PrefixHeader.pch;
 				INFOPLIST_FILE = WYpoetry/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYpoetry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -699,6 +712,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WYpoetry/Classes/Lib/Extension/PrefixHeader.pch;
 				INFOPLIST_FILE = WYpoetry/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYpoetry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
