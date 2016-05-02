@@ -57,5 +57,54 @@
     return newImage;
 }
 
+- (UIImage *)addWaterMark:(NSString *)mark inRect:(CGRect)rect {
+    // 1.开启上下午文
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0);
+    
+    // 2.绘制图片
+    [self drawAtPoint:CGPointZero];
+    
+    // 3.绘制水印
+    NSDictionary *attributeDict = @{
+                                    NSFontAttributeName : [UIFont systemFontOfSize:10.0f],
+                                    NSForegroundColorAttributeName : [[UIColor orangeColor] colorWithAlphaComponent:0.3]
+                                    };
+    
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:mark attributes:attributeDict];
+    
+    // 4.绘制文字
+    [str drawInRect:rect];
+    
+    // 5.获得新图片
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 6.关闭上下文
+    UIGraphicsEndImageContext();
+    return newImage;
+    
+}
+
+/** 设置图片透明度 */
++ (UIImage *)imageByApplyingAlpha:(CGFloat)alpha  image:(UIImage*)image
+{
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, 0.0f);
+    
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGRect area = CGRectMake(0, 0, image.size.width, image.size.height);
+    
+    CGContextScaleCTM(ctx, 1, -1);
+    CGContextTranslateCTM(ctx, 0, -area.size.height);
+    
+    CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
+    
+    CGContextSetAlpha(ctx, alpha);
+    
+    CGContextDrawImage(ctx, area, image.CGImage);
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 @end

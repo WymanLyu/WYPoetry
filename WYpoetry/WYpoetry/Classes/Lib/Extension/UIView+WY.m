@@ -190,4 +190,53 @@ CGRect wy_CGRectMoveToCenter(CGRect rect, CGPoint center)
 	
 	self.frame = newframe;	
 }
+
+- (void)addBorderLayerWithColor:(UIColor *)lineColor dashDotted:(BOOL)isDash {
+//    // 移除上一次虚线图层
+//    CALayer *lineLayer = [self.layer.sublayers lastObject];
+//    [lineLayer removeFromSuperlayer];
+    // 创建图层
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    // 设置图层颜色和尺寸
+    [shapeLayer setFrame:self.bounds];
+    [shapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+    // 设置图层边线颜色为blackColor
+    [shapeLayer setStrokeColor:[lineColor CGColor]];
+    // 设置图层边线的宽度
+    [shapeLayer setLineWidth:1.0f];
+    [shapeLayer setLineJoin:kCALineJoinRound];
+    // 设置图层边线虚实
+    NSArray *pattern = isDash ? @[@10, @10] : nil;
+    [shapeLayer setLineDashPattern:pattern];
+    // 设置图层样式/路径
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, self.frame.origin.x, self.frame.origin.y);
+    CGPathAddRect(path, NULL, self.bounds);
+    [shapeLayer setPath:path];
+    CGPathRelease(path);
+    // 载蒙版上添加
+    [[self layer] addSublayer:shapeLayer];
+
+}
+
+/** 获取指定区域的截图 */
+- (UIImage *)getImageInRect:(CGRect)rect {
+    // 1.开启上下文
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0);
+    // 2.设置路径
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];
+    [path addClip];
+    // 3.获取上下文
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    // 4.渲染layer
+    [self.layer renderInContext:ctx];
+    // 5.获取图片
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    // 6.关闭上下文
+    UIGraphicsEndImageContext();
+
+    return image;
+
+}
+
 @end

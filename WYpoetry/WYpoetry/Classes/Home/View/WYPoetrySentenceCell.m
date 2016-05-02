@@ -55,35 +55,35 @@
 /** 布局子控件 */
 - (void)layoutSubs {
     [self.sentenceLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-    NSLayoutConstraint *constraintCenterL = [NSLayoutConstraint constraintWithItem:self.sentenceLabel
+    NSLayoutConstraint *constraintL = [NSLayoutConstraint constraintWithItem:self.sentenceLabel
                                                                          attribute:NSLayoutAttributeLeading
                                                                          relatedBy:NSLayoutRelationEqual
                                                                             toItem:self.contentView
                                                                          attribute:NSLayoutAttributeLeading
                                                                         multiplier:1.0f
                                                                           constant:0];
-    NSLayoutConstraint *constraintCenterR = [NSLayoutConstraint constraintWithItem:self.sentenceLabel
+    NSLayoutConstraint *constraintR = [NSLayoutConstraint constraintWithItem:self.sentenceLabel
                                                                          attribute:NSLayoutAttributeTrailing
                                                                          relatedBy:NSLayoutRelationEqual
                                                                             toItem:self.contentView
                                                                          attribute:NSLayoutAttributeTrailing
                                                                         multiplier:1.0f
                                                                           constant:0];
-    NSLayoutConstraint *contraintT = [NSLayoutConstraint constraintWithItem:self.sentenceLabel
+    NSLayoutConstraint *constraintT = [NSLayoutConstraint constraintWithItem:self.sentenceLabel
                                                                   attribute:NSLayoutAttributeTop
                                                                   relatedBy:NSLayoutRelationEqual
                                                                      toItem:self.contentView
                                                                   attribute:NSLayoutAttributeTop
                                                                  multiplier:1.0f
                                                                    constant:0];
-    NSLayoutConstraint *contraintB = [NSLayoutConstraint constraintWithItem:self.sentenceLabel
+    NSLayoutConstraint *constraintB = [NSLayoutConstraint constraintWithItem:self.sentenceLabel
                                                                   attribute:NSLayoutAttributeBottom
                                                                   relatedBy:NSLayoutRelationEqual
                                                                      toItem:self.contentView
                                                                   attribute:NSLayoutAttributeBottom
                                                                  multiplier:1.0f
                                                                    constant:0];
-    [self.contentView addConstraints:@[constraintCenterL, constraintCenterR, contraintT, contraintB]];
+    [self.contentView addConstraints:@[constraintL, constraintR, constraintT, constraintB]];
 }
 
 /** 诗句set方法 */

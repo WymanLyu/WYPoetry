@@ -8,10 +8,27 @@
 
 #import "WYSettingTableViewController.h"
 
+/** 蒙版截图样式 */
+typedef NS_ENUM(NSUInteger, ClipStyle) {
+    ClipStyleCoverStyle = 0,
+    ClipStyleDashLineStyle = 1,
+    ClipStyleStraightLineStyle = 2,
+};
+
 @interface WYSettingTableViewController ()
 
 /** cell的描述数组 */
 @property (nonatomic, strong) NSArray *textArray;
+
+/** 选中的cell */
+@property (nonatomic, weak) UITableViewCell *selectedCell;
+
+/** 自动播放 */
+@property (nonatomic, weak) UISwitch *autoPlay;
+
+/** 夜间模式 */
+@property (nonatomic, weak) UISwitch *moonState;
+
 @end
 
 @implementation WYSettingTableViewController
@@ -27,24 +44,21 @@
     [super viewDidLoad];
     // 1.设置背景色
     [self.view setBackgroundColor:BASECOLOR];
+    
     // 2.设置navBar
     self.title = @"设置";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(dismissVc)];
     [self.navigationItem.leftBarButtonItem setTintColor:[UIColor blackColor]];
+    
     // 3.设置分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.sectionHeaderHeight = 0;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 /** 懒加载 */
 - (NSArray *)textArray {
     if (_textArray == nil) {
-        _textArray = @[@"自动播放", @"夜间模式", @"切换特效"];
+        _textArray = @[@[@"自动播放"], @[@"夜间模式"], @[@"灰色截图框", @"实线截图框", @"虚线截图框"]];
     }
     return _textArray;
 }
@@ -56,69 +70,114 @@
 
 #pragma mark - Table view data source
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == (self.textArray.count - 1)) {
+        return @"截图样式";
+    }else {
+        return nil;
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.textArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    NSArray *contentArr = self.textArray[section];
+    return contentArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 1.创建静态cell
     static NSString *ID = @"SettingCell";
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryView = [[UISwitch alloc] init];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 2.创建accessoryView
+        if (indexPath.section == 0) { // 自动播放
+            UISwitch *autoPlay = [[UISwitch alloc] init];
+            [autoPlay addTarget:self action:@selector(autoPlay:) forControlEvents:UIControlEventValueChanged];
+            cell.accessoryView = autoPlay;
+            self.autoPlay = autoPlay;
+        }else if(indexPath.section == 1) { // 夜间模式
+            UISwitch *moonState = [[UISwitch alloc] init];
+            [moonState addTarget:self action:@selector(moonState:) forControlEvents:UIControlEventValueChanged];
+            cell.accessoryView = moonState;
+            self.moonState = moonState;
+        }else { // 蒙版样式
+            cell.accessoryView = nil;
+        }
+    }
     
-    // Configure the cell...
-    cell.textLabel.text = self.textArray[indexPath.section];
+    // 2.设置cell状态
+    if (indexPath.section == 0) { // 自动播放
+        BOOL autoPlay = [[NSUserDefaults standardUserDefaults] boolForKey:UserDefaultKeyIsAutoScroll];
+        self.autoPlay.on = autoPlay;
+    }else if(indexPath.section == 1) { // 夜间模式
+        BOOL moonState = [[NSUserDefaults standardUserDefaults] boolForKey:UserDefaultKeyIsMoonState];
+        self.moonState.on = moonState;
+    }else { // 蒙版样式
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSInteger clipStyle = [defaults integerForKey:UserDefaultKeyClipStyle];
+        if (indexPath.row == clipStyle) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }else {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
+    }
+    
+    // 3.设置cell内容
+    NSArray *contentArr = self.textArray[indexPath.section];
+    cell.textLabel.text = contentArr[indexPath.row];
     
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath.section == (self.textArray.count - 1)) { // 蒙版样式选择
+        // 1.标记选中
+        self.selectedCell = cell;
+        
+        // 2.刷新表格
+        [self.tableView reloadData];
+    }
+    
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+#pragma mark - 偏好设置按钮
+/** 自动播放 */
+- (void)autoPlay:(UISwitch *)autoPlay {
+    // 记录状态
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:autoPlay.isOn forKey:UserDefaultKeyIsAutoScroll];
+    [defaults synchronize];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+/** 夜间模式 */
+- (void)moonState:(UISwitch *)moonState {
+    // 记录状态
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:moonState.isOn forKey:UserDefaultKeyIsMoonState];
+    [defaults synchronize];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+/** 设置选中cell */
+- (void)setSelectedCell:(UITableViewCell *)selectedCell {
+    if (_selectedCell == selectedCell) return; // 过滤相同的
+    _selectedCell = selectedCell;
+    
+    // 3.记录偏好设置
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedCell];
+    [defaults setInteger:indexPath.row forKey:UserDefaultKeyClipStyle];
+    [defaults synchronize];
+    
 }
-*/
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

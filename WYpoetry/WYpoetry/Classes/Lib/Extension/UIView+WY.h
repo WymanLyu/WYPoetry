@@ -31,4 +31,18 @@ CGRect  wy_CGRectMoveToCenter(CGRect rect, CGPoint center);
 - (void) wy_scaleBy: (CGFloat) scaleFactor;
 - (void) wy_fitInSize: (CGSize) aSize;
 
+/**
+ *  添加直线或虚线
+ *
+ *  @param lineColor 边线颜色
+ *  @param isDash    是否虚线
+ */
+- (void)addBorderLayerWithColor:(UIColor *)lineColor dashDotted:(BOOL)isDash;
+
+/**
+ *  获取指定区域的截图
+ *
+ *  @return 图片
+ */
+- (UIImage *)getImageInRect:(CGRect)rect;
 @end
