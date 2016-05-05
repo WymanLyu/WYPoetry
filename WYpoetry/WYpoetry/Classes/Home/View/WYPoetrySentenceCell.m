@@ -45,6 +45,7 @@
     // 初始化Lable
     UILabel *label = [[UILabel alloc] init];
     self.sentenceLabel = label;
+    label.numberOfLines = 0;
     [self.contentView addSubview:self.sentenceLabel];
     
     // 基本设置
@@ -89,7 +90,10 @@
 /** 诗句set方法 */
 - (void)setSentence:(NSString *)sentence {
     _sentence = sentence;
+
     self.sentenceLabel.text = sentence;
 }
+
+
 
 @end

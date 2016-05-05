@@ -30,8 +30,7 @@
         sharedView = [[self alloc] initWithFrame:[[[UIApplication sharedApplication] delegate] window].bounds];
       
         // 2.设置背景色
-        [sharedView setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.5]];
-//        [sharedView setBackgroundColor:[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:0.5]];
+        [sharedView setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.15]];
         
     });
 
@@ -41,21 +40,38 @@
 + (void)show {
     WYPoemHUD *hud = [self shareView];
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-    hud.alpha = 0.8;
+    hud.alpha = 1;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [window addSubview:hud];
-        // 2.创建progressView
+        [window.rootViewController.view addSubview:hud];
+
+        // 1.创建progressView
         WYProgressView *progressView = [[WYProgressView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        progressView.center = hud.center;
-        [hud addSubview:progressView];
         progressView.backgroundColor = [UIColor clearColor];
+
+        // 2.包装白色的view（完成旋转动画）
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        view.center = hud.center;
+        view.backgroundColor = BASECOLOR;
+        
+        // 3.设置圆角和阴影
+        view.layer.cornerRadius = 8;
+        view.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.25].CGColor;
+        view.layer.shadowOpacity = 0.8;
+        view.layer.shadowOffset = CGSizeMake(0, 0);
+        view.layer.shadowRadius = 30;
+        [view addSubview:progressView];
+//        view.clipsToBounds = YES; // 圆角阴影共存此属性为NO
+        
+        // 4.添加到蒙版
+        [hud addSubview:view];
         hud.progressView = progressView;
         hud.progressView.progress = 3.0; // 不进行重绘动画
 #warning 不进行重绘动画
 //        CADisplayLink *link = [CADisplayLink displayLinkWithTarget:hud selector:@selector(addProgress)];
 //        hud.link = link;
 //        [link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        // 旋转动画
+        
+        // 5.旋转动画
         CABasicAnimation *baseAnimation = [CABasicAnimation animation];
         baseAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
         baseAnimation.duration = 1.0f;        
@@ -69,7 +85,6 @@
 /* 重绘动画 */
 static BOOL isAnimating = NO;
 - (void)addProgress {
-//    self.progress += 0.001;
     self.progressView.progress = self.progressView.progress + 0.1;
     if (self.progressView.progress > 3) {
         if (isAnimating) return;
@@ -87,12 +102,12 @@ static BOOL isAnimating = NO;
     WYPoemHUD *hud = [self shareView];
    
     dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.05 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             hud.alpha = 0;
         }completion:^(BOOL finished) {
             [hud.progressView.layer removeAllAnimations];
+            [hud.progressView.superview removeFromSuperview];
             [hud.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-//            [hud.progressView removeFromSuperview];
             hud.progressView = nil;
             [hud removeFromSuperview];
         }];
@@ -105,14 +120,26 @@ static BOOL isAnimating = NO;
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
     dispatch_async(dispatch_get_main_queue(), ^{
         [window addSubview:hud];
-        // 创建successView
+        // 1.创建successView
         WYSuccessView *successView = [[WYSuccessView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        successView.center = hud.center;
-        [hud addSubview:successView];
-        [successView setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.5]];
-        successView.layer.cornerRadius = 8;
-        successView.layer.masksToBounds = YES;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        successView.backgroundColor = [UIColor clearColor];
+        
+        // 2.包装白色的view（完成旋转动画）
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        view.center = hud.center;
+        [view addSubview:successView];
+        view.backgroundColor = [UIColor whiteColor];
+        
+        // 3.设置圆角和阴影
+        view.layer.cornerRadius = 8;
+        view.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.25].CGColor;
+        view.layer.shadowOpacity = 0.8;
+        view.layer.shadowOffset = CGSizeMake(0, 0);
+        view.layer.shadowRadius = 30;
+
+        // 4.展示
+        [hud addSubview:view];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismiss];
         });
         
@@ -125,11 +152,25 @@ static BOOL isAnimating = NO;
      hud.alpha = 1.0;
     dispatch_async(dispatch_get_main_queue(), ^{
          [window addSubview:hud];
-        // 创建successView
+        // 2.创建failView
         WYFailView *failView = [[WYFailView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        failView.center = hud.center;
-        [hud addSubview:failView];
-        [failView setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.5]];
+        failView.backgroundColor = [UIColor clearColor];
+        
+        // 2.包装白色的view（完成阴影和圆角）
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        view.center = hud.center;
+        [view addSubview:failView];
+        view.backgroundColor = [UIColor whiteColor];
+        
+        // 3.设置圆角和阴影
+        view.layer.cornerRadius = 8;
+        view.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.25].CGColor;
+        view.layer.shadowOpacity = 0.8;
+        view.layer.shadowOffset = CGSizeMake(0, 0);
+        view.layer.shadowRadius = 30;
+        
+        // 4.展示
+        [hud addSubview:view];
         failView.layer.cornerRadius = 8;
         failView.layer.masksToBounds = YES;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

@@ -7,12 +7,10 @@
 //
 
 #import "WYProgressView.h"
-//#import "UIColor+Extension.h"
 
 @implementation WYProgressView
 
 - (void)setProgress:(CGFloat)progress{
-    WYLog(@"%f", progress);
     _progress = progress;
    
     if (_progress > 3) return;
@@ -27,7 +25,7 @@
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.bounds.size.width/2.0, self.bounds.size.height/2.0) radius:r startAngle:-M_PI_2 endAngle:endAngle clockwise:YES];
     CGContextAddPath(ctx, path.CGPath);
     CGContextSetLineWidth(ctx, 1.0);
-    [[UIColor blackColor] setStroke];
+    [[[UIColor blackColor] colorWithAlphaComponent:0.35] setStroke];
     CGContextStrokePath(ctx);
     
     if (self.progress > 1) { // 画小圆
@@ -40,7 +38,7 @@
         CGFloat endAngle = newProgress * M_PI * 2 - M_PI_4;
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(centerX, centerY) radius:radius startAngle:-M_PI_4 endAngle:endAngle clockwise:YES];
         CGContextAddPath(ctx, path.CGPath);
-        [[UIColor blackColor] setStroke];
+        [[[UIColor blackColor] colorWithAlphaComponent:0.65] setStroke];
         CGContextStrokePath(ctx);
         if (self.progress > 2) { // 画竖线
             UIBezierPath *path = [UIBezierPath bezierPath];
@@ -51,7 +49,7 @@
             newProgress = self.progress - 2;
             [path addLineToPoint:CGPointMake(startX, startY + lineLong * newProgress)];
             CGContextAddPath(ctx, path.CGPath);
-            [[UIColor blackColor] setStroke];
+            [[[UIColor blackColor] colorWithAlphaComponent:0.65] setStroke];
             CGContextStrokePath(ctx);
         }
         

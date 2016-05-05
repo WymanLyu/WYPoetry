@@ -24,6 +24,7 @@
 		137DE0581CCF479400E71160 /* UITabBarItem+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE04E1CCF479300E71160 /* UITabBarItem+WY.m */; };
 		137DE0591CCF479400E71160 /* UIView+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE0501CCF479400E71160 /* UIView+WY.m */; };
 		137DE05C1CCF4B8100E71160 /* WYButtomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE05B1CCF4B8100E71160 /* WYButtomBar.m */; };
+		13CD39B71CD9C97D0055370A /* WYTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CD39B61CD9C97D0055370A /* WYTableHeadView.m */; };
 		13D6E66F1CBB9C13003669E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */; };
 		13D6E67A1CBB9C14003669E7 /* WYpoetryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6791CBB9C14003669E7 /* WYpoetryTests.m */; };
 		13D6E6851CBB9C14003669E7 /* WYpoetryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6841CBB9C14003669E7 /* WYpoetryUITests.m */; };
@@ -89,6 +90,8 @@
 		137DE0511CCF479400E71160 /* WYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYExtension.h; sourceTree = "<group>"; };
 		137DE05A1CCF4B8100E71160 /* WYButtomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYButtomBar.h; sourceTree = "<group>"; };
 		137DE05B1CCF4B8100E71160 /* WYButtomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYButtomBar.m; sourceTree = "<group>"; };
+		13CD39B51CD9C97D0055370A /* WYTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTableHeadView.h; sourceTree = "<group>"; };
+		13CD39B61CD9C97D0055370A /* WYTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTableHeadView.m; sourceTree = "<group>"; };
 		13D6E65C1CBB9C13003669E7 /* WYpoetry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYpoetry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D6E66E1CBB9C13003669E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D6E6701CBB9C13003669E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 				13E5F80D1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.m */,
 				13D8B4CE1CD6E94500DE1570 /* WYOptionButton.h */,
 				13D8B4CF1CD6E94500DE1570 /* WYOptionButton.m */,
+				13CD39B51CD9C97D0055370A /* WYTableHeadView.h */,
+				13CD39B61CD9C97D0055370A /* WYTableHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 				13DE36071CD10AEA000103E5 /* WYMineTableViewController.m in Sources */,
 				13D8B4D01CD6E94500DE1570 /* WYOptionButton.m in Sources */,
 				137DE0551CCF479400E71160 /* UIColor+WY.m in Sources */,
+				13CD39B71CD9C97D0055370A /* WYTableHeadView.m in Sources */,
 				13DE36011CD0FD35000103E5 /* WYSettingTableViewController.m in Sources */,
 				135039551CD795CF00FBCDA5 /* WYSuccessView.m in Sources */,
 				13E5F8111CD3B39400BDB4F9 /* WYPoetryModel.m in Sources */,

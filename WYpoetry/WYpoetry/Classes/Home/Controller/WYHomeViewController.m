@@ -15,6 +15,7 @@
 #import "WYPoetrySentenceCell.h"
 #import "WYOptionButton.h"
 #import "WYPoemHUD.h"
+#import "WYTableHeadView.h"
 
 @interface WYHomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 /** 底部的bar */
@@ -157,6 +158,14 @@
     self.showView.backgroundColor = BASECOLOR;
     [self.view addSubview:showTableView];
     
+    
+    WYTableHeadView *headView = [[WYTableHeadView alloc] initWithFrame:CGRectZero];
+    self.showView.tableHeaderView = headView;
+    CGRect frame = showTableView.tableHeaderView.frame;
+    frame.size.height = 88;
+//    headView.backgroundColor = [UIColor grayColor];
+    showTableView.tableHeaderView.frame = frame;
+    
     // 2.布局view
     NSLayoutConstraint *constraintCenterX = [NSLayoutConstraint constraintWithItem:showTableView
                                                                          attribute:NSLayoutAttributeCenterX
@@ -195,9 +204,9 @@
 
 #pragma mark -  网络请求
 - (void)loadDataWithIndex:(NSInteger)index {
-    [WYPoemHUD show];
     // 0.关闭定时器
     [self stopTimer];
+    [WYPoemHUD show];
     [self.showView setContentOffset:CGPointMake(0, - self.view.wy_height * 0.25)];
     
     // 1.创建请求
@@ -208,18 +217,23 @@
         [WYPoemHUD dismiss];
         if (connectionError) { // 连接网络失败
             NSLog(@"网络连接失败:%@", connectionError);
+            [self startTimer];
             return ;
         }
         // 解析JSON数据
         NSError *error = nil;
         NSArray *contentArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         if (error) {// 数据解析失败
+            [WYPoemHUD showFail];
+            [self startTimer];
             WYLog(@"数据解析失败:%@", error);
         }else { // 数据转模型
-            WYLog(@"====");
             WYPoetryModel *model = [WYPoetryModel poetryModelWithDict:[contentArray firstObject]];
             self.model = model;
             dispatch_async(dispatch_get_main_queue(), ^{
+                WYprintf(@"成功...");
+                WYTableHeadView *headView = (WYTableHeadView *)self.showView.tableHeaderView;
+                headView.model = model;
                 [self.showView reloadData];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     // 1.开启自动滚动
@@ -235,6 +249,7 @@
 
 /** 开启定时器 */
 - (void)startTimer {
+    if (self.timer) return;
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.25f target:self selector:@selector(startAutoScroll) userInfo:nil repeats:YES];
     self.timer = timer;
 }
@@ -248,7 +263,7 @@
 /** 滚动视图 */
 - (void)startAutoScroll {
     BOOL isAutoScroll = [[NSUserDefaults standardUserDefaults] boolForKey:UserDefaultKeyIsAutoScroll];
-    if (!isAutoScroll) return;
+    if (!isAutoScroll || !self.timer) return;
     CGFloat offsetY = self.showView.contentOffset.y;
     CGFloat offset = 8;
     if (offsetY > self.showView.contentSize.height) { // 到顶了再重复
@@ -272,6 +287,7 @@
 
 /** 喜爱标签 */
 - (void)favouritePoemIconClick:(WYButtomBarButton *)button {
+    [self stopTimer];
     WYLog(@"%s", __func__);
     button.selected = !button.isSelected;
 }
@@ -279,6 +295,7 @@
 /** 刷新 */
 - (void)refresh {
     WYLog(@"%s", __func__);
+   
     NSInteger index = arc4random_uniform(100);
     [self loadDataWithIndex:index];
 }
@@ -384,6 +401,8 @@
 
 #pragma mark - 截图和分享
 - (void)saveClipImage {
+//    WYprintf(@"%@", self.timer);
+    [WYPoemHUD show];
     // 1.关闭定时器
     [self stopTimer];
     // 1.1.停止tableview的交互
@@ -417,10 +436,11 @@
     });
     
     if (!error) {
+        [WYPoemHUD dismiss];
         message = @"成功保存到相册";
         [WYPoemHUD showSuccess];
     }else
-    {
+    {   [WYPoemHUD dismiss];
         [WYPoemHUD showFail];
         message = [error description];
     }
@@ -463,6 +483,13 @@
     [self stopTimer];
 }
 
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSString *str = self.model.contents[indexPath.row];
+//    CGSize textMaxSize = CGSizeMake(self.showView.frame.size.width, MAXFLOAT);
+//    NSDictionary *textFontDict = @{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]};
+//    CGRect textContentRect = [str boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:textFontDict context:nil];
+//    return textContentRect.size.height * 1.5;
+//}
 
 
 @end
