@@ -19,6 +19,10 @@
 /** 诗名 */
 @property (nonatomic, copy) NSString *title;
 
+#pragma mark - 自定义字段
+/** 是否喜好 */
+@property (nonatomic, assign, getter=isFavourite) BOOL favourite;
+
 - (instancetype)initWithDict:(NSDictionary *)dict;
 + (instancetype)poetryModelWithDict:(NSDictionary *)dict;
 

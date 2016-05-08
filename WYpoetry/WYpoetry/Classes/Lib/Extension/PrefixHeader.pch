@@ -45,6 +45,7 @@
 #import "WYExtension.h"
 #import "WYConstValue.h"
 #import "WYPoemHUD.h"
+#import "WYDatabase.h"
 
 
 #endif

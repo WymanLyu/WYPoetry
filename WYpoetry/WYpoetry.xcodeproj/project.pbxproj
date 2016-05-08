@@ -24,6 +24,7 @@
 		137DE0581CCF479400E71160 /* UITabBarItem+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE04E1CCF479300E71160 /* UITabBarItem+WY.m */; };
 		137DE0591CCF479400E71160 /* UIView+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE0501CCF479400E71160 /* UIView+WY.m */; };
 		137DE05C1CCF4B8100E71160 /* WYButtomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 137DE05B1CCF4B8100E71160 /* WYButtomBar.m */; };
+		1384973F1CDDC84300B39ACC /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1384973E1CDDC84300B39ACC /* libsqlite3.0.tbd */; };
 		13CD39B71CD9C97D0055370A /* WYTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CD39B61CD9C97D0055370A /* WYTableHeadView.m */; };
 		13D6E66F1CBB9C13003669E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6E66D1CBB9C13003669E7 /* LaunchScreen.storyboard */; };
 		13D6E67A1CBB9C14003669E7 /* WYpoetryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6E6791CBB9C14003669E7 /* WYpoetryTests.m */; };
@@ -31,6 +32,8 @@
 		13D8B4D01CD6E94500DE1570 /* WYOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D8B4CF1CD6E94500DE1570 /* WYOptionButton.m */; };
 		13D8B4D31CD72EA000DE1570 /* WYPoemHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D8B4D21CD72EA000DE1570 /* WYPoemHUD.m */; };
 		13D8B4E61CD74A8D00DE1570 /* WYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D8B4E51CD74A8D00DE1570 /* WYProgressView.m */; };
+		13DCB3761CDF8983008901AB /* NSObject+WYDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCB3731CDF8983008901AB /* NSObject+WYDatabase.m */; };
+		13DCB3771CDF8983008901AB /* WYDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCB3751CDF8983008901AB /* WYDatabase.m */; };
 		13DCCA7D1CD5E09D00BF21F9 /* WYConstValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCCA7C1CD5E09D00BF21F9 /* WYConstValue.m */; };
 		13DE36011CD0FD35000103E5 /* WYSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DE36001CD0FD35000103E5 /* WYSettingTableViewController.m */; };
 		13DE36041CD0FEA8000103E5 /* WYBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DE36031CD0FEA8000103E5 /* WYBaseNavViewController.m */; };
@@ -90,6 +93,7 @@
 		137DE0511CCF479400E71160 /* WYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYExtension.h; sourceTree = "<group>"; };
 		137DE05A1CCF4B8100E71160 /* WYButtomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYButtomBar.h; sourceTree = "<group>"; };
 		137DE05B1CCF4B8100E71160 /* WYButtomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYButtomBar.m; sourceTree = "<group>"; };
+		1384973E1CDDC84300B39ACC /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		13CD39B51CD9C97D0055370A /* WYTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTableHeadView.h; sourceTree = "<group>"; };
 		13CD39B61CD9C97D0055370A /* WYTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTableHeadView.m; sourceTree = "<group>"; };
 		13D6E65C1CBB9C13003669E7 /* WYpoetry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYpoetry.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,10 @@
 		13D8B4D21CD72EA000DE1570 /* WYPoemHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WYPoemHUD.m; path = ../WYPoemHUD.m; sourceTree = "<group>"; };
 		13D8B4E41CD74A8D00DE1570 /* WYProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYProgressView.h; path = ../WYProgressView.h; sourceTree = "<group>"; };
 		13D8B4E51CD74A8D00DE1570 /* WYProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WYProgressView.m; path = ../WYProgressView.m; sourceTree = "<group>"; };
+		13DCB3721CDF8983008901AB /* NSObject+WYDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WYDatabase.h"; sourceTree = "<group>"; };
+		13DCB3731CDF8983008901AB /* NSObject+WYDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WYDatabase.m"; sourceTree = "<group>"; };
+		13DCB3741CDF8983008901AB /* WYDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDatabase.h; sourceTree = "<group>"; };
+		13DCB3751CDF8983008901AB /* WYDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDatabase.m; sourceTree = "<group>"; };
 		13DCCA7B1CD5E09D00BF21F9 /* WYConstValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYConstValue.h; sourceTree = "<group>"; };
 		13DCCA7C1CD5E09D00BF21F9 /* WYConstValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYConstValue.m; sourceTree = "<group>"; };
 		13DE35FF1CD0FD35000103E5 /* WYSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYSettingTableViewController.h; sourceTree = "<group>"; };
@@ -126,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1384973F1CDDC84300B39ACC /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +194,7 @@
 		137DE0171CCF355C00E71160 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				138497341CDDC13D00B39ACC /* DataBase[数据库] */,
 				1369BA421CD09ADD002A7E19 /* Base[基类] */,
 				137DE01C1CCF355C00E71160 /* Home[主页面] */,
 				137DE0181CCF355C00E71160 /* Edit[编辑页面] */,
@@ -386,9 +396,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		138497341CDDC13D00B39ACC /* DataBase[数据库] */ = {
+			isa = PBXGroup;
+			children = (
+				13DCB3721CDF8983008901AB /* NSObject+WYDatabase.h */,
+				13DCB3731CDF8983008901AB /* NSObject+WYDatabase.m */,
+				13DCB3741CDF8983008901AB /* WYDatabase.h */,
+				13DCB3751CDF8983008901AB /* WYDatabase.m */,
+			);
+			name = "DataBase[数据库]";
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		13D6E6531CBB9C13003669E7 = {
 			isa = PBXGroup;
 			children = (
+				1384973E1CDDC84300B39ACC /* libsqlite3.0.tbd */,
 				13D6E65E1CBB9C13003669E7 /* WYpoetry */,
 				13D6E6781CBB9C14003669E7 /* WYpoetryTests */,
 				13D6E6831CBB9C14003669E7 /* WYpoetryUITests */,
@@ -590,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13DCB3761CDF8983008901AB /* NSObject+WYDatabase.m in Sources */,
 				13E5F80E1CD3A7A000BDB4F9 /* WYPoetrySentenceCell.m in Sources */,
 				137DE03D1CCF46A400E71160 /* WYHomeViewController.m in Sources */,
 				13D8B4D31CD72EA000DE1570 /* WYPoemHUD.m in Sources */,
@@ -601,6 +625,7 @@
 				13DE36071CD10AEA000103E5 /* WYMineTableViewController.m in Sources */,
 				13D8B4D01CD6E94500DE1570 /* WYOptionButton.m in Sources */,
 				137DE0551CCF479400E71160 /* UIColor+WY.m in Sources */,
+				13DCB3771CDF8983008901AB /* WYDatabase.m in Sources */,
 				13CD39B71CD9C97D0055370A /* WYTableHeadView.m in Sources */,
 				13DE36011CD0FD35000103E5 /* WYSettingTableViewController.m in Sources */,
 				135039551CD795CF00FBCDA5 /* WYSuccessView.m in Sources */,

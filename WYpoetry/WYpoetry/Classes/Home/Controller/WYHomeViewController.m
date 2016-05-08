@@ -290,6 +290,7 @@
     [self stopTimer];
     WYLog(@"%s", __func__);
     button.selected = !button.isSelected;
+    
 }
 
 /** 刷新 */

@@ -17,6 +17,7 @@
 #import "UIImageView+WY.h"
 #import "UITabBarItem+WY.h"
 #import "UIBarButtonItem+WY.h"
+#import "NSObject+WYDatabase.h"
 
 
 
