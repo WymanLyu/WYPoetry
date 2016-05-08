@@ -41,12 +41,18 @@
 
 /** 选项按钮 */
 @property (nonatomic, weak) WYOptionButton *optionBtn;
+
+/** 喜好按钮 */
+@property (nonatomic, weak) WYButtomBarButton *bookMarkBtn;
 @end
 
 @implementation WYHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 0.开启数据库注册模型
+    [[WYDatabase shareDatabase] registeTableWithClass:[WYPoetryModel class]];
+    
     // 1.设置底部栏
     [self setupButtomBar];
     
@@ -110,6 +116,26 @@
     return _optionBtn;
 }
 
+- (void)setModel:(WYPoetryModel *)model {
+    [self stopTimer];
+    [self.showView setContentOffset:CGPointMake(0, - self.view.wy_height * 0.25)];
+    _model = model;
+
+    // 设置喜好按钮
+    dispatch_async(dispatch_get_main_queue(), ^{
+//            WYprintf(@"成功...");
+        self.bookMarkBtn.selected = model.favourite;
+        WYTableHeadView *headView = (WYTableHeadView *)self.showView.tableHeaderView;
+        headView.model = model;
+        [self.showView reloadData];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 1.开启自动滚动
+            [self startTimer];
+        });
+
+    });
+}
+
 #pragma mark - 设置底部栏
 - (void)setupButtomBar {
  
@@ -121,6 +147,7 @@
     
     // 书签
     WYButtomBarButton *bookMarkBtn = [[WYButtomBarButton alloc] initWithImageName:@"favouritePoemIcon" selectedImageName:@"favouritePoemIconClick" style:WYButtomBarButtonStylePlain target:self action:@selector(favouritePoemIconClick:)];
+    self.bookMarkBtn = bookMarkBtn;
     
     // 我的
     WYButtomBarButton *mineBtn = [[WYButtomBarButton alloc] initWithImageName:@"mineIcon" style:WYButtomBarButtonStylePlain target:self action:@selector(mine)];
@@ -230,16 +257,16 @@
         }else { // 数据转模型
             WYPoetryModel *model = [WYPoetryModel poetryModelWithDict:[contentArray firstObject]];
             self.model = model;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                WYprintf(@"成功...");
-                WYTableHeadView *headView = (WYTableHeadView *)self.showView.tableHeaderView;
-                headView.model = model;
-                [self.showView reloadData];
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    // 1.开启自动滚动
-                    [self startTimer];
-                });
-            });
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                WYprintf(@"成功...");
+//                WYTableHeadView *headView = (WYTableHeadView *)self.showView.tableHeaderView;
+//                headView.model = model;
+//                [self.showView reloadData];
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                    // 1.开启自动滚动
+//                    [self startTimer];
+//                });
+//            });
         }
     }];
     
@@ -287,9 +314,18 @@
 
 /** 喜爱标签 */
 - (void)favouritePoemIconClick:(WYButtomBarButton *)button {
-    [self stopTimer];
+//    [self stopTimer];
     WYLog(@"%s", __func__);
     button.selected = !button.isSelected;
+    if (button.selected) { // 存储
+        if (self.model.wy_objcID) return; // 不重复存储
+        self.model.favourite = YES;
+        [self.model wy_save];
+    }else { // 删除
+        if (!self.model.wy_objcID) return; // 未存储则不删除
+        self.model.favourite = NO;
+        [self.model wy_delete];
+    }
     
 }
 
@@ -304,6 +340,7 @@
 /** 我的 */
 - (void)mine {
     WYLog(@"%s", __func__);
+
     WYMineTableViewController *settingVc = [[WYMineTableViewController alloc] init];
     WYBaseNavViewController *navVc = [[WYBaseNavViewController alloc] initWithRootViewController:settingVc];
     [self presentViewController:navVc animated:YES completion:nil];

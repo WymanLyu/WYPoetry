@@ -7,12 +7,23 @@
 //
 
 #import "WYMineTableViewController.h"
+#import "WYPoetryModel.h"
 
 @interface WYMineTableViewController ()
 
+/** 模型数组 */
+@property (nonatomic, strong) NSArray *modelArrM;
 @end
 
 @implementation WYMineTableViewController
+
+- (NSArray *)modelArrM {
+    if (!_modelArrM) {
+//        // 从数据库中加载
+        _modelArrM = [[WYDatabase shareDatabase] selectObjcsWithClass:[WYPoetryModel class]];
+    }
+    return _modelArrM;
+}
 
 - (void)loadView {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
@@ -23,13 +34,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // 1.设置背景色
     [self.view setBackgroundColor:BASECOLOR];
+    
     // 2.设置navBar
     self.title = @"我的";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(dismissVc)];
     [self.navigationItem.leftBarButtonItem setTintColor:[UIColor blackColor]];
     // 3.设置分割线
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.sectionHeaderHeight = 0;
 }
@@ -46,25 +60,38 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.modelArrM.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    NSString *ID = @"MineCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    WYPoetryModel *model = self.modelArrM[indexPath.row];
+    cell.textLabel.text = model.title;
     
     return cell;
 }
-*/
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"我的收藏";
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"presented%@ -- presenting%@", self.presentedViewController, self.presentingViewController);
+    WYPoetryModel *model = self.modelArrM[indexPath.row];
+    [self.presentingViewController setValue:model forKey:@"model"];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -20,5 +20,7 @@
 - (void)wy_save;
 /** 删除对象 */
 - (void)wy_delete;
+/** 获取存储对象 */
++ (NSArray *)wy_objs;
 
 @end

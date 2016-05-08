@@ -323,6 +323,8 @@ static WYDatabase *_instance;
         NSLog(@"删除对象失败");
     }else {
         NSLog(@"删除对象成功");
+        // 清空主键
+        objc.wy_objcID = 0;
     }
 }
 

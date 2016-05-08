@@ -30,6 +30,10 @@ const char *pdataKey = "pdataKey";
     }
 }
 
+/** 获取存储对象 */
++ (NSArray *)wy_objs {
+    return [[WYDatabase shareDatabase] selectObjcsWithClass:self];
+}
 
 - (void)setWy_objcID:(NSInteger)wy_objcID {
     // 建立关联属性
