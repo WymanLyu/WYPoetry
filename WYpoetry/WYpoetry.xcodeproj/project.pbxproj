@@ -542,16 +542,7 @@
 		13D6E6531CBB9C13003669E7 = {
 			isa = PBXGroup;
 			children = (
-				13E51F5A1CE23A2E00020596 /* ImageIO.framework */,
-				13D5727E1CE1DBF5006CA602 /* libz.tbd */,
-				13D5727C1CE1DBDD006CA602 /* libstdc++.tbd */,
-				13D5727A1CE1DBCF006CA602 /* CoreTelephony.framework */,
-				13D572781CE1DBBF006CA602 /* libsqlite3.tbd */,
-				13D572761CE1DBB0006CA602 /* CoreGraphics.framework */,
-				13D572741CE1DBA1006CA602 /* libiconv.tbd */,
-				13D572721CE1DB85006CA602 /* Security.framework */,
-				13D572701CE1DB6D006CA602 /* SystemConfiguration.framework */,
-				1384973E1CDDC84300B39ACC /* libsqlite3.0.tbd */,
+				13E51F5C1CE23C5900020596 /* system */,
 				13D6E65E1CBB9C13003669E7 /* WYpoetry */,
 				13D6E6781CBB9C14003669E7 /* WYpoetryTests */,
 				13D6E6831CBB9C14003669E7 /* WYpoetryUITests */,
@@ -572,8 +563,7 @@
 		13D6E65E1CBB9C13003669E7 /* WYpoetry */ = {
 			isa = PBXGroup;
 			children = (
-				13D5724A1CE1DAE8006CA602 /* UMSocial_Sdk_5.1 */,
-				13E51F481CE239B300020596 /* SinaSSO */,
+				13E51F5D1CE23C7E00020596 /* Share[分享] */,
 				137DE0171CCF355C00E71160 /* Classes */,
 				13D6E65F1CBB9C13003669E7 /* Supporting Files */,
 			);
@@ -644,6 +634,32 @@
 				13E51F561CE239B300020596 /* WeiboUser.h */,
 			);
 			path = SinaSSO;
+			sourceTree = "<group>";
+		};
+		13E51F5C1CE23C5900020596 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				13E51F5A1CE23A2E00020596 /* ImageIO.framework */,
+				13D5727E1CE1DBF5006CA602 /* libz.tbd */,
+				13D5727C1CE1DBDD006CA602 /* libstdc++.tbd */,
+				13D5727A1CE1DBCF006CA602 /* CoreTelephony.framework */,
+				13D572781CE1DBBF006CA602 /* libsqlite3.tbd */,
+				13D572761CE1DBB0006CA602 /* CoreGraphics.framework */,
+				13D572741CE1DBA1006CA602 /* libiconv.tbd */,
+				13D572721CE1DB85006CA602 /* Security.framework */,
+				13D572701CE1DB6D006CA602 /* SystemConfiguration.framework */,
+				1384973E1CDDC84300B39ACC /* libsqlite3.0.tbd */,
+			);
+			name = system;
+			sourceTree = "<group>";
+		};
+		13E51F5D1CE23C7E00020596 /* Share[分享] */ = {
+			isa = PBXGroup;
+			children = (
+				13E51F481CE239B300020596 /* SinaSSO */,
+				13D5724A1CE1DAE8006CA602 /* UMSocial_Sdk_5.1 */,
+			);
+			name = "Share[分享]";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
