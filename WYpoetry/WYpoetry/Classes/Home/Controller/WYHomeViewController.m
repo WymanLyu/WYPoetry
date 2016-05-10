@@ -16,8 +16,11 @@
 #import "WYOptionButton.h"
 #import "WYPoemHUD.h"
 #import "WYTableHeadView.h"
+#import "UMSocial.h"
+#import "WYShareViewController.h"
 
-@interface WYHomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+
+@interface WYHomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UMSocialUIDelegate>
 /** 底部的bar */
 @property (nonatomic, weak) WYButtomBar *buttomBar;
 
@@ -44,6 +47,7 @@
 
 /** 喜好按钮 */
 @property (nonatomic, weak) WYButtomBarButton *bookMarkBtn;
+
 @end
 
 @implementation WYHomeViewController
@@ -349,7 +353,7 @@
 
 #pragma mark - 手势处理
 - (void)longPress:(UILongPressGestureRecognizer *)longPressRecognizer {
-    WYLog(@"%s==%@", __func__, longPressRecognizer);
+//    WYLog(@"%s==%@", __func__, longPressRecognizer);
     // 1.关闭定时器
     [self stopTimer];
     // 1.1.停止tableview的交互
@@ -423,6 +427,7 @@
 }
 
 - (void)tap:(UIGestureRecognizer *)pan {
+    
     // 移除截图
     [self.optionBtn removeFromSuperview];
     [self.clipCoverView removeFromSuperview];
@@ -462,11 +467,48 @@
 }
 
 - (void)shareClipImage {
+    // 1.关闭定时器
+    [self stopTimer];
+    // 1.1.停止tableview的交互
+    [self.showView setUserInteractionEnabled:NO];
+    
+    // 2.获取截图
+    // 1.获取截图
+    UIImage *image = [self.view getImageInRect:self.clipCoverView.frame];
+    
+    // 2.添加水印
+    CGFloat x = self.clipCoverView.wy_bottomRight.x - 50;
+    CGFloat y = self.clipCoverView.wy_bottomRight.y - 20;
+    CGFloat w = 50;
+    CGFloat h = 20;
+    CGRect rect = CGRectMake(x, y, w, h);
+    UIImage *newImage =[image addWaterMark:@"By_暖诗" inRect:rect];
+    
+    // 3.分享
+
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"57302bfbe0f55a468d0009fe"
+                                      shareText:@"友盟社会化分享让您快速实现分享等社会化功能，http://umeng.com/social"
+                                     shareImage:newImage
+                                shareToSnsNames:@[UMShareToSina]
+                                       delegate:self];
+    
     
 }
 
+/** 微博分享回调 */
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
+}
+
 /** 保存相册信息 */
-- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo { 
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     NSString *message = nil;
     // 开启定时器
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -521,13 +563,7 @@
     [self stopTimer];
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSString *str = self.model.contents[indexPath.row];
-//    CGSize textMaxSize = CGSizeMake(self.showView.frame.size.width, MAXFLOAT);
-//    NSDictionary *textFontDict = @{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]};
-//    CGRect textContentRect = [str boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:textFontDict context:nil];
-//    return textContentRect.size.height * 1.5;
-//}
+
 
 
 @end

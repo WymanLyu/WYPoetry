@@ -157,12 +157,14 @@
 #pragma mark - 按钮点击事件
 - (void)saveBtnClick:(UIButton *)btn {
     if (self.saveClickBlock) {
+        btn.enabled = NO;
         self.saveClickBlock();
     }
 }
 
 - (void)shareBtnClick:(UIButton *)btn {
     if (self.shareClickBlock) {
+        btn.enabled = NO;
         self.shareClickBlock();
     }
     

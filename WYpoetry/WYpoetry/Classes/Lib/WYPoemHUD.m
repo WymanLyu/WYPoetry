@@ -51,7 +51,7 @@
         // 2.包装白色的view（完成旋转动画）
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
         view.center = hud.center;
-        view.backgroundColor = BASECOLOR;
+        view.backgroundColor = [UIColor whiteColor];
         
         // 3.设置圆角和阴影
         view.layer.cornerRadius = 8;
