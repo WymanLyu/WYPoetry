@@ -724,6 +724,7 @@
 				TargetAttributes = {
 					13D6E65B1CBB9C13003669E7 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = VR675A6HRW;
 					};
 					13D6E6741CBB9C14003669E7 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -965,6 +966,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WYpoetry/Classes/Lib/Extension/PrefixHeader.pch;
 				INFOPLIST_FILE = WYpoetry/Info.plist;
@@ -979,6 +982,7 @@
 				OTHER_LDFLAGS = "-ObjC ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYpoetry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -986,6 +990,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WYpoetry/Classes/Lib/Extension/PrefixHeader.pch;
 				INFOPLIST_FILE = WYpoetry/Info.plist;
@@ -1000,6 +1006,7 @@
 				OTHER_LDFLAGS = "-ObjC ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyman.WYpoetry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
