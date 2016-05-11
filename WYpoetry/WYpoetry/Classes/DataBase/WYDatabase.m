@@ -101,7 +101,7 @@ static WYDatabase *_instance;
 
 #pragma mark - 懒加载
 - (NSMutableArray *)tableNameArrM {
-    if (!_tableNameArrM) {
+//    if (!_tableNameArrM) {
         _tableNameArrM = [NSMutableArray array];
         // 获取数据库表
         sqlite3_stmt *statement;
@@ -111,9 +111,9 @@ static WYDatabase *_instance;
             char *nameData = (char *)sqlite3_column_text(statement, 1);
             NSString *tableName = [[NSString alloc] initWithUTF8String:nameData];
             [_tableNameArrM addObject:tableName];
-//            NSLog(@"name:%@",tableName);
+            NSLog(@"name:%@",tableName);
         }
-    }
+//    }
     return _tableNameArrM;
 }
 
