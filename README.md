@@ -39,7 +39,7 @@
 
 * 可以选择自动播放
 
-![](https://github.com/WymanLyu/WYSlideView/blob/master/Images/%E8%87%AA%E9%80%82%E5%BA%94.gif)
+![](https://github.com/WymanLyu/WYPoetry/blob/master/gifImage/AutoScrolle.gif)
 
 ```
   实现思路：
