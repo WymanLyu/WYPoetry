@@ -17,7 +17,6 @@
 #import "WYPoemHUD.h"
 #import "WYTableHeadView.h"
 #import "UMSocial.h"
-#import "WYShareViewController.h"
 
 
 @interface WYHomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UMSocialUIDelegate>
@@ -261,16 +260,6 @@
         }else { // 数据转模型
             WYPoetryModel *model = [WYPoetryModel poetryModelWithDict:[contentArray firstObject]];
             self.model = model;
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                WYprintf(@"成功...");
-//                WYTableHeadView *headView = (WYTableHeadView *)self.showView.tableHeaderView;
-//                headView.model = model;
-//                [self.showView reloadData];
-//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                    // 1.开启自动滚动
-//                    [self startTimer];
-//                });
-//            });
         }
     }];
     

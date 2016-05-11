@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13337B391CE023A1000FFEAB /* WYShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13337B381CE023A1000FFEAB /* WYShareViewController.m */; };
 		135039551CD795CF00FBCDA5 /* WYSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 135039541CD795CF00FBCDA5 /* WYSuccessView.m */; };
 		135039581CD7990A00FBCDA5 /* WYFailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 135039571CD7990A00FBCDA5 /* WYFailView.m */; };
 		1360B2EB1CD09CCB00D83203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1360B2EA1CD09CCB00D83203 /* Assets.xcassets */; };
@@ -84,8 +83,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13337B371CE023A1000FFEAB /* WYShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYShareViewController.h; sourceTree = "<group>"; };
-		13337B381CE023A1000FFEAB /* WYShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYShareViewController.m; sourceTree = "<group>"; };
 		135039531CD795CF00FBCDA5 /* WYSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYSuccessView.h; path = ../WYSuccessView.h; sourceTree = "<group>"; };
 		135039541CD795CF00FBCDA5 /* WYSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WYSuccessView.m; path = ../WYSuccessView.m; sourceTree = "<group>"; };
 		135039561CD7990A00FBCDA5 /* WYFailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYFailView.h; path = ../WYFailView.h; sourceTree = "<group>"; };
@@ -338,8 +335,6 @@
 			children = (
 				137DE03B1CCF46A400E71160 /* WYHomeViewController.h */,
 				137DE03C1CCF46A400E71160 /* WYHomeViewController.m */,
-				13337B371CE023A1000FFEAB /* WYShareViewController.h */,
-				13337B381CE023A1000FFEAB /* WYShareViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -820,7 +815,6 @@
 				13CD39B71CD9C97D0055370A /* WYTableHeadView.m in Sources */,
 				13DE36011CD0FD35000103E5 /* WYSettingTableViewController.m in Sources */,
 				135039551CD795CF00FBCDA5 /* WYSuccessView.m in Sources */,
-				13337B391CE023A1000FFEAB /* WYShareViewController.m in Sources */,
 				13E5F8111CD3B39400BDB4F9 /* WYPoetryModel.m in Sources */,
 				135039581CD7990A00FBCDA5 /* WYFailView.m in Sources */,
 				137DE0571CCF479400E71160 /* UIImageView+WY.m in Sources */,
