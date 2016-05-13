@@ -3,7 +3,7 @@
 
 ## 亮点
 
-* 分装了数据库-实现对象与表的一一映射
+#### 封装了数据库-实现对象与表的一一映射
 ```
     [Objc wy_save];  // 只要对对象调用save就可以存进去了，什么都不用做就完成了建表SQL等语句
     [Objc wy_delete];  // 只要对对象调用delete就可以删除沙盒了，什么都不用做就完成了删除字段的SQL语句
@@ -12,11 +12,11 @@
 
 * 实现思路
 
-  * 通过Runtime获取类的属性，以类名为表名，属性名位字段建表 *目标是解耦-对象和表*
+  * 通过Runtime获取类的属性，以类名为表名，属性名位字段建表 **目标是解耦-对象和表**
 
-  * 分装了插入删除等语句，通过在分类中给元类添加关联属性完成 *目标是轻便性-在乎存储的结果*
+  * 分装了插入删除等语句，通过在分类中给元类添加关联属性完成 **目标是轻便性-在乎存储的结果**
 
-* 自定义HUD-针对性的自定义HUD
+#### 自定义HUD-针对性的自定义HUD
 
 ```
    [WYPoemHUD show];
@@ -26,20 +26,20 @@
 
 * 实现思路
   * 在窗口添加单例的View
-  * Quart2D画出自己APP的图像（此处还可以做重绘动画*但是不建议耗性能*）
+  * Quart2D画出自己APP的图像（此处还可以做重绘动画**但是不建议耗性能**）
 
 ### 原型图
 
 利用Axure制作该APP的原型，只制作大体线框图及页面跳转（文件已上传）
 
-![](https://github.com/WymanLyu/WYPoetry/blob/master/gifImage/product1.png)
-![](https://github.com/WymanLyu/WYPoetry/blob/master/gifImage/product2.png)
+![](https://github.com/WymanLyu/WYPoetry/blob/master/gifImage/product00.png)
+![](https://github.com/WymanLyu/WYPoetry/blob/master/gifImage/product01.png)
 
 ### 展示
 
 * 可以选择自动播放
 
-![](https://github.com/WymanLyu/WYSlideView/blob/master/Images/%E8%87%AA%E9%80%82%E5%BA%94.gif)
+![](https://github.com/WymanLyu/WYPoetry/blob/master/gifImage/AutoScrolle.gif)
 
 ```
   实现思路：
