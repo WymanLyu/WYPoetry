@@ -1,6 +1,6 @@
-*.js linguist-language=Scala
-*.css linguist-language=Scala
-*.html linguist-language=Scala
+*.js linguist-language=Object-C
+*.css linguist-language=Object-C
+*.html linguist-language=Object-C
 
 
 
